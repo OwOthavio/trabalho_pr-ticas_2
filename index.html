@@ -12,14 +12,19 @@
       <!-- Place a-assets here, outside a-marker -->
       <a-assets>
         <a-asset-item id="espada" src="espada.glb"></a-asset-item>
+        <a-asset-item id="tank" src="Tank.glb"></a-asset-item>
       </a-assets>
 
       <a-marker 
         type="pattern" 
         url="pattern-sword_012.patt">
-        <a-entity gltf-model="#espada"
+        <a-entity gltf-model="#espada">
+
+       <a-marker 
+        type="pattern" 
+        url="pattern-tank001.patt">
+        <a-entity gltf-model="#tank">
           
-          >
           </a-entity>
       </a-marker>
       
