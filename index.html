@@ -1,12 +1,5 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>AR Experience</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js/aframe/build/aframe-ar.js"></script>
-  </head>
   <body style="margin: 0; overflow: hidden;">
     <a-scene embedded 
       renderer="logarithmicDepthBuffer: true; 
@@ -26,30 +19,15 @@
         <a-entity gltf-model="#espada" scale="0.5 0.5 0.5"></a-entity>
       </a-marker>
 
-      <a-marker type="pattern" url="pattern-planicie.patt">
+      <a-marker type="pattern" url="pattern-planicie.patt" smoothing="true" smoothingFactor="0.5">
         <a-entity gltf-model="#salvador" scale="2 2 2"></a-entity>
       </a-marker>
 
-      <a-marker type="pattern" url="pattern-tnk.patt">
+      <a-marker type="pattern" url="pattern-tnk.patt" smoothing="true" smoothingFactor="0.5">
         <a-entity gltf-model="#tank" scale="1 1 1"></a-entity>
       </a-marker>
       
       <a-entity camera position="0 1.6 0"></a-entity>
     </a-scene>
-
-    <script>
-      // Request high-resolution camera for maximum quality
-      if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-        navigator.mediaDevices.getUserMedia({
-          video: {
-            width: { ideal: 1920 },
-            height: { ideal: 1080 },
-            facingMode: 'environment'
-          }
-        }).catch(err => {
-          console.warn('High resolution camera request failed, using default:', err);
-        });
-      }
-    </script>
   </body>
 </html>
