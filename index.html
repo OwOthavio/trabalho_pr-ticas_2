@@ -12,11 +12,19 @@
       <a-assets>
         <a-asset-item id="espada" src="espada.glb"></a-asset-item>
         <a-asset-item id="tank" src="Tank.glb"></a-asset-item>
+        <a-asset-item id="salvador" src="salvador-origemSTL resolução menor.glb"></a-asset-item>
       </a-assets>
 
       <a-marker type="pattern" url="pattern-sword_012.patt">
         <a-entity gltf-model="#espada">
           <scale> 0.5 0.5 0.5
+          </scale>
+        </a-entity>
+      </a-marker>
+
+            <a-marker type="pattern" url="pattern-planicie.patt">
+        <a-entity gltf-model="#salvador">
+          <scale> 1 1 1
           </scale>
         </a-entity>
       </a-marker>
