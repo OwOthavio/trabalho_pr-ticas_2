@@ -1,33 +1,33 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script src="https://cdn.jsdelivr.net/npm/aframe@1.4.2/dist/aframe.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/ar.js@3.4.5/aframe/aframe-ar.js"></script>
-</head>
+    <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js/aframe/build/aframe-ar.js"></script>
+  </head>
   <body>
     <a-scene embedded 
-      renderer="logarithmicDepthBuffer: true; 
-                antialias: true;
-                precision: 'highp';"
-      arjs="patternRatio:0.90; trackingMethod: best; maxAlternativeMarkers: 0;">
-      
+      renderer="logarithmicDepthBuffer: true;"
+      arjs="patternRatio:0.90">
+      <!-- Place a-assets here, outside a-marker -->
       <a-assets>
         <a-asset-item id="espada" src="espada.glb"></a-asset-item>
         <a-asset-item id="tank" src="Tank.glb"></a-asset-item>
-        <a-asset-item id="salvador" src="salvador-origem-stl-resolucao-menor.glb"></a-asset-item>
+        <a-asset-item id="salvador" src="salvador-origemSTL resolução menor.glb"></a-asset-item>
       </a-assets>
 
-      <a-marker type="pattern" url="pattern-sword_012.patt" smoothing="true" smoothingFactor="0.5">
+      <a-marker type="pattern" url="pattern-sword_012.patt">
         <a-entity gltf-model="#espada" scale="0.5 0.5 0.5"></a-entity>
       </a-marker>
 
-      <a-marker type="pattern" url="pattern-planicie.patt" smoothing="true" smoothingFactor="0.5">
+      <a-marker type="pattern" url="pattern-planicie.patt">
         <a-entity gltf-model="#salvador" scale="2 2 2"></a-entity>
       </a-marker>
 
-      <a-marker type="pattern" url="pattern-tnk.patt" smoothing="true" smoothingFactor="0.5">
+      <a-marker type="pattern" url="pattern-tnk.patt">
         <a-entity gltf-model="#tank" scale="1 1 1"></a-entity>
       </a-marker>
+      
+      <a-entity camera></a-entity>
     </a-scene>
   </body>
 </html>
