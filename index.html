@@ -3,9 +3,7 @@
   <body style="margin: 0; overflow: hidden;">
     <a-scene embedded 
       renderer="logarithmicDepthBuffer: true; 
-                antialias: true; 
-                physicallyCorrectLights: true;
-                colorManagement: true;
+                antialias: true;
                 precision: 'highp';"
       arjs="patternRatio:0.90; trackingMethod: best; maxAlternativeMarkers: 0;">
       
@@ -26,8 +24,6 @@
       <a-marker type="pattern" url="pattern-tnk.patt" smoothing="true" smoothingFactor="0.5">
         <a-entity gltf-model="#tank" scale="1 1 1"></a-entity>
       </a-marker>
-      
-      <a-entity camera position="0 1.6 0"></a-entity>
     </a-scene>
   </body>
 </html>
